@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { CarI } from '../interfaces/carInterface';
-import deprecatePriceByYear from '../utils/deprecatePrice';
+import { CarI } from '../../interfaces/carInterface';
+import deprecatePriceByYear from '../../utils/deprecatePrice';
 
 interface PropsI {
   selectedCar: CarI;
