@@ -44,14 +44,15 @@ function Form(): JSX.Element {
   };
 
   return (
-    <form>
-      <label htmlFor="brand">
+    <form className="flex flex-col w-full items-start mt-3">
+      <label htmlFor="brand" className="font-bold flex gap-2 mb-2">
         Brand:
         <select
           name="brand"
           id="brand"
           value={formData.brand}
           onChange={handleInputChange}
+          className="bg-transparent border border-gray-400 rounded-md pl-2"
         >
           {BRANDS.filter((e) => e !== '').map((e) => (
             <option key={e} value={e}>
@@ -61,7 +62,7 @@ function Form(): JSX.Element {
         </select>
       </label>
       {formData.brand !== '' && (
-        <label htmlFor="date">
+        <label htmlFor="date" className="font-bold flex gap-2 mb-2">
           Matriculation date:
           <input
             type="date"
@@ -69,17 +70,19 @@ function Form(): JSX.Element {
             id="date"
             value={formData.date}
             onChange={handleInputChange}
+            className="bg-transparent border border-gray-400 rounded-md pl-2"
           />
         </label>
       )}
       {formData.date !== '' && (
-        <label htmlFor="fuel-type">
+        <label htmlFor="fuel-type" className="font-bold flex gap-2 mb-2">
           Fuel type:
           <select
             name="fuelType"
             id="fuel-type"
             value={formData.fuelType}
             onChange={handleInputChange}
+            className="bg-transparent border border-gray-400 rounded-md pl-2"
           >
             {FUELS.filter((e) => e !== '').map((e) => (
               <option key={e} value={e}>
@@ -90,13 +93,14 @@ function Form(): JSX.Element {
         </label>
       )}
       {fetchedCars.length > 0 && (
-        <label htmlFor="fetched-cars">
+        <label htmlFor="fetched-cars" className="font-bold flex flex-col mb-2">
           Model:
           <select
             name="fetched-cars"
             id="fetched-cars"
             value={selectedCar?.model}
             onChange={handleCarSelect}
+            className="bg-transparent border border-gray-400 rounded-md pl-2 w-full"
           >
             {fetchedCars.map((e) => (
               <option key={e.model} value={e.model}>
@@ -112,7 +116,9 @@ function Form(): JSX.Element {
           date={+formData.date.split('-')[0]}
         />
       ) : (
-        <p>Please, complete the form above</p>
+        <p className="text-gray-500 mt-4 text-center w-full">
+          Please, complete the form above
+        </p>
       )}
     </form>
   );
