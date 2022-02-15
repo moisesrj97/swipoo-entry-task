@@ -103,7 +103,10 @@ function Form(): JSX.Element {
         </label>
       )}
       {selectedCar ? (
-        <CarDetail selectedCar={selectedCar} date={formData.date} />
+        <CarDetail
+          selectedCar={selectedCar}
+          date={+formData.date.split('-')[0]}
+        />
       ) : (
         <p>Please, complete the form above</p>
       )}
