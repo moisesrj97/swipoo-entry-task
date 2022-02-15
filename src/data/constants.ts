@@ -51,6 +51,7 @@ export const BRANDS = [
   'Toyota',
   'Volkswagen',
   'Volvo',
+  '',
 ] as const;
 
-export const FUELS = ['D', 'Elc', 'G', 'S', 'DyE', 'GyE'] as const;
+export const FUELS = ['D', 'Elc', 'G', 'S', 'DyE', 'GyE', ''] as const;
