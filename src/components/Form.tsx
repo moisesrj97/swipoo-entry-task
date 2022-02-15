@@ -102,7 +102,11 @@ function Form(): JSX.Element {
           </select>
         </label>
       )}
-      {selectedCar ? <CarDetail /> : <p>Please, complete the form above</p>}
+      {selectedCar ? (
+        <CarDetail selectedCar={selectedCar} />
+      ) : (
+        <p>Please, complete the form above</p>
+      )}
     </form>
   );
 }

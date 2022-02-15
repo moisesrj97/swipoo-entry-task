@@ -1,7 +1,12 @@
 import React from 'react';
+import { CarI } from '../interfaces/carInterface';
 
-function CarDetail(): JSX.Element {
-  return <div>CarDetail</div>;
+interface PropsI {
+  selectedCar: CarI;
+}
+
+function CarDetail({ selectedCar }: PropsI): JSX.Element {
+  return <div>{JSON.stringify(selectedCar)}</div>;
 }
 
 export default CarDetail;
