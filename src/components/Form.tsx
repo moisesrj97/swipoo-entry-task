@@ -36,7 +36,7 @@ function Form(): JSX.Element {
 
   const handleCarSelect = (event: ChangeEvent): void => {
     const target = event.target as HTMLSelectElement;
-    setSelectedCar(JSON.parse(target.value));
+    setSelectedCar(fetchedCars.find((e) => e.model === target.value));
   };
 
   return (
@@ -95,7 +95,7 @@ function Form(): JSX.Element {
             onChange={handleCarSelect}
           >
             {fetchedCars.map((e) => (
-              <option key={e.model} value={JSON.stringify(e)}>
+              <option key={e.model} value={e.model}>
                 {e.model}
               </option>
             ))}
