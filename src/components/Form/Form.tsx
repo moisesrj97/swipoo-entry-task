@@ -1,8 +1,8 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
-import { BRANDS, FUELS } from '../data/constants';
-import { CarI } from '../interfaces/carInterface';
-import getCars, { Brand, FuelType } from '../services/apiCallServices';
-import CarDetail from './CarDetail';
+import { BRANDS, FUELS } from '../../data/constants';
+import { CarI } from '../../interfaces/carInterface';
+import getCars, { Brand, FuelType } from '../../services/apiCallServices';
+import CarDetail from '../CarDetail/CarDetail';
 
 interface FormStateI {
   brand: Brand;
