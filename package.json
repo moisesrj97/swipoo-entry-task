@@ -22,7 +22,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test:coverage": "CI=true npm test -- --env=jsdom --coverage"
   },
   "browserslist": {
     "production": [
@@ -46,5 +47,11 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "!src/index.tsx",
+      "!src/react-app-env.d.ts"
+    ]
   }
 }
