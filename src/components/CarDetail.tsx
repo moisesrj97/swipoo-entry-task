@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CarI } from '../interfaces/carInterface';
 
 interface PropsI {
   selectedCar: CarI;
+  date: string;
 }
 
 function CarDetail({
@@ -18,6 +19,7 @@ function CarDetail({
     period,
     value,
   },
+  date,
 }: PropsI): JSX.Element {
   return (
     <div>
