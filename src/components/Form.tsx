@@ -29,6 +29,10 @@ function Form(): JSX.Element {
     }
   }, [formData]);
 
+  useEffect(() => {
+    setSelectedCar(undefined);
+  }, [fetchedCars]);
+
   const handleInputChange = (event: ChangeEvent): void => {
     const target = event.target as HTMLSelectElement;
     setFormData({ ...formData, [target.name]: target.value });
