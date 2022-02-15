@@ -1,8 +1,8 @@
 import { BRANDS, FUELS } from '../data/constants';
 import { CarI } from '../interfaces/carInterface';
 
-type Brand = typeof BRANDS[number];
-type FuelType = typeof FUELS[number];
+export type Brand = typeof BRANDS[number];
+export type FuelType = typeof FUELS[number];
 
 const getCars = async (
   brand: Brand,
