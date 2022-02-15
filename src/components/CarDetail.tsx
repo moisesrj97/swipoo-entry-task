@@ -26,7 +26,7 @@ function CarDetail({
 
   useEffect(() => {
     setPriceCalculation(deprecatePriceByYear(+value, date));
-  }, []);
+  }, [value, date]);
 
   return (
     <div>
