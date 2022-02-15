@@ -41,7 +41,8 @@
     "react-hooks/exhaustive-deps": "warn",
     "import/prefer-default-export": "off",
     "react/prop-types": "off",
-    "comma-dangle": "off"
+    "comma-dangle": "off",
+    "implicit-arrow-linebreak": "warn"
   },
   "settings": {
     "import/resolver": {
