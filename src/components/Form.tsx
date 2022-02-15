@@ -2,6 +2,7 @@ import React, { ChangeEvent, useEffect, useState } from 'react';
 import { BRANDS, FUELS } from '../data/constants';
 import { CarI } from '../interfaces/carInterface';
 import getCars, { Brand, FuelType } from '../services/apiCallServices';
+import CarDetail from './CarDetail';
 
 interface FormStateI {
   brand: Brand;
@@ -101,6 +102,7 @@ function Form(): JSX.Element {
           </select>
         </label>
       )}
+      {selectedCar ? <CarDetail /> : <p>Please, complete the form above</p>}
     </form>
   );
 }
