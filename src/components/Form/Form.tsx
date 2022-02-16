@@ -21,11 +21,25 @@ function Form(): JSX.Element {
 
   const [selectedCar, setSelectedCar] = useState<CarI>();
 
+  const [isAnyError, setIsAnyError] = useState<string>('');
+
   useEffect(() => {
     if (Object.values(formData).every((value) => value !== '')) {
-      getCars(formData.brand, formData.date, formData.fuelType).then((cars) => {
-        setFetchedCars(cars);
-      });
+      getCars(formData.brand, formData.date, formData.fuelType)
+        .then((cars) => {
+          if (cars.length === 0) {
+            setIsAnyError(
+              "Sorry, we couldn't find any car matching your criteria."
+            );
+            setFetchedCars([]);
+          } else {
+            setIsAnyError('');
+            setFetchedCars(cars);
+          }
+        })
+        .catch(() => {
+          setIsAnyError('Sorry, there was an error in the server.');
+        });
     }
   }, [formData]);
 
@@ -92,6 +106,9 @@ function Form(): JSX.Element {
               ))}
             </select>
           </label>
+        )}
+        {isAnyError !== '' && (
+          <p className="text-xs text-red-500 pt-2">{isAnyError}</p>
         )}
         {fetchedCars.length > 0 && (
           <label
