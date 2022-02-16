@@ -27,7 +27,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "test:coverage": "CI=true npm test -- --env=jsdom --coverage"
+    "test:coverage": "CI=true npm test -- --env=jsdom --coverage",
+    "test:e2e": "cypress open"
   },
   "browserslist": {
     "production": [
@@ -45,6 +46,7 @@
     "@typescript-eslint/eslint-plugin": "^5.11.0",
     "@typescript-eslint/parser": "^5.11.0",
     "autoprefixer": "^10.4.2",
+    "cypress": "^9.5.0",
     "eslint": "^8.9.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-import-resolver-typescript": "^2.5.0",
