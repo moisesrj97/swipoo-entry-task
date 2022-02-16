@@ -32,11 +32,11 @@ describe('Given CarDetail component', () => {
       expect(screen.getByText(/testCylinders/)).toBeInTheDocument();
       expect(screen.getByText(/testKw/)).toBeInTheDocument();
       expect(screen.getByText(/testPeriod/)).toBeInTheDocument();
-      expect(screen.getAllByText(/22000€/)).toHaveLength(2);
+      expect(screen.getByText(/22000€/)).toBeInTheDocument();
     });
     test('Ir should render calculated devaluated price', () => {
       render(<CarDetail date={2018} selectedCar={mockedCar} />);
-      expect(screen.getAllByText(/22000€/)).toHaveLength(2);
+      expect(screen.getByText(/22000€/)).toBeInTheDocument();
       expect(screen.getByText(/21900€/)).toBeInTheDocument();
     });
   });
