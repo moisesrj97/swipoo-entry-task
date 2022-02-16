@@ -6,6 +6,9 @@ node_modules
 .pnp.js
 
 cypress/plugins/
+cypress/fixtures/
+cypress/downloads/
+cypress/support/
 
 # testing
 /coverage
