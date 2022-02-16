@@ -29,20 +29,40 @@ function CarDetail({
   }, [value, date]);
 
   return (
-    <div>
-      <h3>{`${model} (${brand})`}</h3>
-      <p>{`CC: ${cc}`}</p>
-      <p>{`CV: ${cv}`}</p>
-      <p>{`CVF: ${cvf}`}</p>
-      <p>{`Cylinders: ${cylinders}`}</p>
-      <p>{`Fuel: ${fuel}`}</p>
-      <p>{`KW: ${kw}`}</p>
-      <p>{`Period: ${period}`}</p>
-      <p>{`Value: ${value}€`}</p>
-      <p>Price calculation: </p>
-      {priceCalculation.map((e, i) => (
-        <p key={e}>{`${date + i}: ${e}€`}</p>
-      ))}
+    <div className="w-full border-t border-gray-300 pt-3">
+      <h3 className="text-xl font-bold underline decoration-blue-500 underline-offset-4 mb-2">{`${model} - ${brand}`}</h3>
+      <h4 className="text-gray-600">Technical data sheet:</h4>
+      <ul className="list-disc list-inside marker:text-blue-500">
+        <li className="py-1">{`CC: ${cc}`}</li>
+        <li className="py-1">{`CV: ${cv}`}</li>
+        <li className="py-1">{`CVF: ${cvf}`}</li>
+        <li className="py-1">{`Cylinders: ${cylinders}`}</li>
+        <li className="py-1">{`Fuel: ${fuel}`}</li>
+        <li className="py-1">{`KW: ${kw}`}</li>
+        <li className="py-1">{`Period: ${period}`}</li>
+      </ul>
+      <div>
+        <h4 className="text-gray-600 mt-2 mb-2">Market value of the vehicle</h4>
+        <div className="flex flex-col w-full">
+          <div className="flex w-full justify-around bg-blue-500 text-white rounded-t-md">
+            <h5>Year</h5>
+            <h5>Price (€)</h5>
+          </div>
+          {priceCalculation.map((e, i) => (
+            <div
+              key={e}
+              className={
+                i === priceCalculation.length - 1
+                  ? 'border border-blue-500 flex w-full justify-around  rounded-b-md'
+                  : 'border border-blue-500 flex w-full justify-around '
+              }
+            >
+              <p>{date + i}</p>
+              <p>{`${e}€`}</p>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
