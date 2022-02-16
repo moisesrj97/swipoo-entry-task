@@ -13,6 +13,7 @@ function App(): JSX.Element {
         </h1>
         <Form />
       </div>
+      <p className="pt-2 text-xs">Made with 💙 by Moisés Rodríguez</p>
     </div>
   );
 }
