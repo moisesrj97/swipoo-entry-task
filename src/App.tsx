@@ -21,6 +21,7 @@ function App(): JSX.Element {
     <div className="w-screen flex flex-col my-10 items-center">
       <div className="w-11/12 md:w-8/12 xl:w-6/12 2xl:w-4/12 h-max py-4 px-6 md:px-6 xl:px-8 flex flex-col items-center rounded-md shadow shadow-gray-700 dark:bg-[#242424]">
         <DarkModeSwitch
+          data-testid="dark-mode-switch"
           onChange={toggleDarkMode}
           checked={darkMode}
           className="self-end"
