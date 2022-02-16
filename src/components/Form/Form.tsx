@@ -45,7 +45,7 @@ function Form(): JSX.Element {
 
   return (
     <form className="flex flex-col w-full items-start mt-3">
-      <label htmlFor="brand" className="font-bold flex gap-2 mb-2">
+      <label htmlFor="brand" className="font-bold flex gap-2 mb-2 flex-wrap">
         Brand:
         <select
           name="brand"
@@ -62,7 +62,7 @@ function Form(): JSX.Element {
         </select>
       </label>
       {formData.brand !== '' && (
-        <label htmlFor="date" className="font-bold flex gap-2 mb-2">
+        <label htmlFor="date" className="font-bold flex gap-2 mb-2 flex-wrap">
           Matriculation date:
           <input
             type="date"
