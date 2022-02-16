@@ -29,9 +29,11 @@ function CarDetail({
   }, [value, date]);
 
   return (
-    <div className="w-full border-t border-gray-300 pt-3">
+    <div className="w-full border-t border-gray-300 dark:border-gray-600 pt-3 dark:text-white">
       <h3 className="text-xl font-bold underline decoration-blue-500 underline-offset-4 mb-2">{`${model} - ${brand}`}</h3>
-      <h4 className="text-gray-600">Technical data sheet:</h4>
+      <h4 className="text-gray-600 dark:text-gray-300">
+        Technical data sheet:
+      </h4>
       <ul className="list-disc list-inside marker:text-blue-500">
         <li className="py-1">{`CC: ${cc}`}</li>
         <li className="py-1">{`CV: ${cv}`}</li>
@@ -42,7 +44,9 @@ function CarDetail({
         <li className="py-1">{`Period: ${period}`}</li>
       </ul>
       <div>
-        <h4 className="text-gray-600 mt-2 mb-2">Market value of the vehicle</h4>
+        <h4 className="text-gray-600 dark:text-gray-300 mt-2 mb-2">
+          Market value of the vehicle
+        </h4>
         <div className="flex flex-col w-full">
           <div className="flex w-full justify-around bg-blue-500 text-white rounded-t-md">
             <h5>Year</h5>
