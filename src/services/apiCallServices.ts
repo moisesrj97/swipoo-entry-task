@@ -8,12 +8,14 @@ const getCars = async (
   brand: Brand,
   date: string,
   fuelType: FuelType
-): Promise<CarI[]> => {
-  const res = await fetch(
+): Promise<CarI[]> =>
+  fetch(
     `https://api.swipoo.com/itp/cars/?brand=${brand}&enrollmentDate=${date}&fuel=${fuelType}`
-  );
-  const { cars } = await res.json();
-  return cars;
-};
+  )
+    .then((res) => res.json())
+    .then(({ cars }) => cars)
+    .catch((e) => {
+      throw new Error(e);
+    });
 
 export default getCars;
