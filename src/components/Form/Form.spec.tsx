@@ -109,7 +109,7 @@ describe('Given Form component', () => {
         'testModel2'
       );
       expect(
-        await screen.findByText('testModel2 (testBrand)')
+        await screen.findByText('testModel2 - testBrand')
       ).toBeInTheDocument();
     });
   });
