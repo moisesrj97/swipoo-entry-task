@@ -59,7 +59,7 @@ function Form(): JSX.Element {
 
   return (
     <>
-      <form className="flex flex-col w-full items-start mt-3 mb-2">
+      <form className="flex flex-col w-full items-start mt-3 mb-2 dark:text-white">
         <label htmlFor="brand" className="font-bold flex gap-2 mb-2 flex-wrap">
           Brand:
           <select
@@ -70,7 +70,7 @@ function Form(): JSX.Element {
             className="bg-transparent border border-gray-400 rounded-md pl-2"
           >
             {BRANDS.filter((e) => e !== '').map((e) => (
-              <option key={e} value={e}>
+              <option key={e} value={e} className="dark:bg-[#242424]">
                 {e}
               </option>
             ))}
@@ -100,7 +100,7 @@ function Form(): JSX.Element {
               className="bg-transparent border border-gray-400 rounded-md pl-2"
             >
               {FUELS.filter((e) => e !== '').map((e) => (
-                <option key={e} value={e}>
+                <option key={e} value={e} className="dark:bg-[#242424]">
                   {e}
                 </option>
               ))}
@@ -108,7 +108,9 @@ function Form(): JSX.Element {
           </label>
         )}
         {isAnyError !== '' && (
-          <p className="text-xs text-red-500 pt-2">{isAnyError}</p>
+          <p className="text-xs text-red-500 dark:text-red-200 pt-2">
+            {isAnyError}
+          </p>
         )}
         {fetchedCars.length > 0 && (
           <label
@@ -124,7 +126,11 @@ function Form(): JSX.Element {
               className="bg-transparent border border-gray-400 rounded-md pl-2 w-full"
             >
               {fetchedCars.map((e) => (
-                <option key={e.model} value={e.model}>
+                <option
+                  key={e.model}
+                  value={e.model}
+                  className="dark:bg-[#242424]"
+                >
                   {e.model}
                 </option>
               ))}
@@ -138,7 +144,7 @@ function Form(): JSX.Element {
           date={+formData.date.split('-')[0]}
         />
       ) : (
-        <p className="text-gray-500 mt-4 text-center w-full">
+        <p className="text-gray-500 dark:text-gray-300 mt-4 text-center w-full">
           Please, complete the form above
         </p>
       )}

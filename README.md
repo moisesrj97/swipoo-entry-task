@@ -6,7 +6,8 @@
 
 - React
 - Typescript
-- Material UI
+- Tailwincss
+- React-toggle-dark-mode
 - Jest / Testing library
 - Cypress
 - Husky & Github Actions for CI / CD
