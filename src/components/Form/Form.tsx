@@ -37,7 +37,7 @@ function Form(): JSX.Element {
             setFetchedCars(cars);
           }
         })
-        .catch((e) => {
+        .catch(() => {
           setIsAnyError('Sorry, there was an error in the server.');
         });
     }

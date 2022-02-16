@@ -42,7 +42,7 @@
     "import/prefer-default-export": "off",
     "react/prop-types": "off",
     "comma-dangle": "off",
-    "implicit-arrow-linebreak": "warn"
+    "implicit-arrow-linebreak": "off"
   },
   "settings": {
     "import/resolver": {
